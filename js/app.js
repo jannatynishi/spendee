@@ -3,7 +3,6 @@ function getExpenses() {
     const rentExpense = document.getElementById('rent-expense');
     const clothesExpense = document.getElementById('clothes-expense');
     const totalExpenses = parseFloat(foodExpense.value) + parseFloat(rentExpense.value) + parseFloat(clothesExpense.value);
-    // console.log(totalExpenses);
     return totalExpenses;
 }
 function getBalance() {
@@ -21,34 +20,38 @@ function getBalance() {
     }
 }
 function getSavingBalance() {
+    const balanceTotal = document.getElementById('total-income');
     const savingPercentage = document.getElementById('saving-percentage');
-    const savingAmount = (getBalance() / 100) * parseFloat(savingPercentage.value);
-    return savingAmount;
+    const savingAmountValue = (balanceTotal.value / 100) * parseFloat(savingPercentage.value);
+   
+    return savingAmountValue;
 }
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const totalExpenses = document.getElementById('expenses-amount');
     totalExpenses.innerText = getExpenses();
     const totalbalance = document.getElementById('balance-amount');
-    // totalbalance.innerText = getBalance();
-    if (getBalance()> getExpenses()){
-        document.getElementById('total-balance-error-msg').style.display = 'none';
-        // totalExpenses.innerText = getExpenses();
-        totalbalance.innerText = getBalance();
-    }
-    else{
-        document.getElementById('total-balance-error-msg').style.display = 'block';
-    }
-})
-document.getElementById('saving-btn').addEventListener('click', function () {
-    const savingAmount = document.getElementById('saving-amount');
-    savingAmount.innerText = getSavingBalance();
-    // if(getBalance() > getSavingBalance()){
-    //     savingAmount.innerText = getSavingBalance();
-    //     document.getElementById('saving-error-msg').style.display = 'none';
+    totalbalance.innerText = getBalance();
+    // if (getBalance()> getExpenses()){
+    //     document.getElementById('total-balance-error-msg').style.display = 'none';
+    //     // totalExpenses.innerText = getExpenses();
+    //     totalbalance.innerText = getBalance();
     // }
     // else{
-    //     document.getElementById('saving-error-msg').style.display = 'block';
+    //     document.getElementById('total-balance-error-msg').style.display = 'block';
     // }
+})
+document.getElementById('saving-btn').addEventListener('click', function () {
+    const savingErrorMsg = document.getElementById('saving-balance-error-msg');
+    const savingAmount = document.getElementById('saving-amount');
     const remainingBalance = document.getElementById('remaining-amount');
-    remainingBalance.innerText = getBalance() - getSavingBalance();
+    if(getSavingBalance() < getBalance()){
+        savingAmount.innerText = getSavingBalance();
+        savingErrorMsg.style.display = 'none';
+        remainingBalance.innerText = getBalance() - getSavingBalance();
+    }
+    else if(getSavingBalance() > getBalance()){
+        savingAmount.innerText = 'NULL';
+        savingErrorMsg.style.display = 'block';
+        remainingBalance.innerText = getBalance();
+        }
 })

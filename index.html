@@ -15,14 +15,16 @@
 <body>
     <section class="px-5">
         <div>
-            <h1 class="text-center mt-3 mb-5" style="color:rgb(105, 104, 104) ; font-family:cursive;">Spendee<span ><img src="images/12eqv4t7huc95.png" style="width: 50px;" alt=""></span></h1>
+            <h1 class="text-center mt-3 mb-5" style="color:rgb(105, 104, 104) ; font-family:cursive;">Spendee<span><img
+                        src="images/12eqv4t7huc95.png" style="width: 50px;" alt=""></span></h1>
         </div>
         <div class="row mb-5 mt-2">
-            <div class="col-lg-7 col-sm-12 align-self-center container-sm-fluid d-flex mx-sm-auto">
-                <img src="images/business-man-calculating-finance-numbers.jpg" class="img-fluid pe-lg-5  " alt="">
+            <div class="col-lg-7 col-sm-12 align-self-center container-fluid d-flex mx-auto">
+                <img src="images/business-man-calculating-finance-numbers.jpg" class="img-fluid pe-lg-5 pt-lg-3 "
+                    alt="">
             </div>
             <!-- <div class="col-lg-1"></div> -->
-            <div class="col-lg-5 col-sm-12 mt-sm-3" style="background-color: rgb(245, 245, 245);">
+            <div class="col-lg-5 col-sm-12 mt-3" style="background-color: rgb(245, 245, 245);">
                 <div>
                     <h3 class="text-center mt-4 mb-4">Income</h3>
                     <div class="row px-4">
@@ -70,7 +72,7 @@
                     <div>
                         <h5 class="text-center">Total Expenses: <span id="expenses-amount"> 00</span></h5>
                         <h5 class="text-center">Balance: <span id="balance-amount"> 00</span></h5>
-                        <p id="total-balance-error-msg" class="text-center" style="color: red;">*Sorry, the balance is not enough</p>
+                        <!-- <p id="total-balance-error-msg" class="text-center" style="color: red;">*Sorry, the balance is not enough</p> -->
 
                     </div>
                     <div class="row px-4 mb-3 mt-4">
@@ -91,6 +93,8 @@
                         </div>
                     </div>
                     <div>
+                        <p id="saving-balance-error-msg" class="text-center" style="color: red;">*Sorry, the balance is
+                            not enough for saving</p>
                         <h5 class="text-center">Saving Amount: <span id="saving-amount">00</span></h5>
                         <h5 class="text-center mb-4">Remaining Balance: <span id="remaining-amount">00</span></h5>
                     </div>
