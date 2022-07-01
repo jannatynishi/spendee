@@ -44,13 +44,13 @@ document.getElementById('saving-btn').addEventListener('click', function () {
     const savingErrorMsg = document.getElementById('saving-balance-error-msg');
     const savingAmount = document.getElementById('saving-amount');
     const remainingBalance = document.getElementById('remaining-amount');
-    if(getSavingBalance() < getBalance()){
+    if(getSavingBalance() <= getBalance()){
         savingAmount.innerText = getSavingBalance();
         savingErrorMsg.style.display = 'none';
         remainingBalance.innerText = getBalance() - getSavingBalance();
     }
     else if(getSavingBalance() > getBalance()){
-        savingAmount.innerText = 'NULL';
+        savingAmount.innerText = '00';
         savingErrorMsg.style.display = 'block';
         remainingBalance.innerText = getBalance();
         }
